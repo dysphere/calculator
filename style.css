@@ -1,0 +1,51 @@
+.display {
+    width: 310px;
+    height: 50px;
+    background-color: #e6ffe6;
+    font-size: xx-large;
+    text-align: right;
+    font-family: "LCD";
+    padding-top: 25px;
+    padding-right: 15px;
+}
+
+.numberButton, .functionButton {
+    color: white;
+    background-color: #ff55a3;
+    width: 65px;
+    height: 60px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh 36vw;
+    padding: 15px;
+    background-color: #fc8eac;
+    border-radius: 20px;
+    width: 355px;
+    height: 510px;
+    border: 2px solid #ff55a3;
+}
+
+button {
+    padding: 30px 20px;
+    margin: 10px 10px;
+    text-align: center;
+    font-size: x-large;
+    line-height:1px;
+    border-radius: 10px;
+    border: 2px solid #ff55a3;
+}

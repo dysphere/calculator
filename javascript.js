@@ -33,3 +33,6 @@ function operate(a, operator, b) {
         return divide(a, b);
     }
 }
+
+const display = document.querySelector(".display");
+display.textContent = "0";

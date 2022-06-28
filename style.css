@@ -9,7 +9,7 @@
     padding-right: 15px;
 }
 
-.numberButton, .functionButton {
+.numberButton, .functionButton, #clear, #allClear, #equal, #decimal {
     color: white;
     background-color: #ff55a3;
     width: 65px;
@@ -48,4 +48,5 @@ button {
     line-height:1px;
     border-radius: 10px;
     border: 2px solid #ff55a3;
+    cursor: pointer;
 }

@@ -21,16 +21,16 @@ function divide(a, b) {
 
 function operate(a, operator, b) {
     if (operator == "add") {
-        return add(a, b).toFixed(3);
+        return add(a, b);
     }
     else if (operator == "subtract") {
-        return subtract(a, b).toFixed(3);
+        return subtract(a, b);
     }
     else if (operator == "multiply") {
-        return multiply(a, b).toFixed(3);
+        return multiply(a, b);
     }
     else if (operator == "divide") {
-        return divide(a, b).toFixed(3);
+        return divide(a, b);
     }
 }
 
@@ -74,7 +74,7 @@ buttons.forEach((button) => {
             else if (fullEquation[1] == "-") {
                 op = "subtract";
             }
-            display.textContent = operate(num1, op, num2);
+            display.textContent = operate(num1, op, num2).toFixed(2);
             display.textContent += ` ${button.textContent} `;
         }
         else {
@@ -98,7 +98,7 @@ buttons.forEach((button) => {
         else if (fullEquation[1] == "-") {
             op = "subtract";
         }
-        display.textContent = operate(num1, op, num2);
+        display.textContent = operate(num1, op, num2).toFixed(2);
     }
     else if (button.id == "allClear") {
         display.textContent = "0";

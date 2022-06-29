@@ -74,7 +74,7 @@ buttons.forEach((button) => {
             else if (fullEquation[1] == "-") {
                 op = "subtract";
             }
-            display.textContent = operate(num1, op, num2).toFixed(2);
+            display.textContent = parseFloat(operate(num1, op, num2).toFixed(6));
             display.textContent += ` ${button.textContent} `;
         }
         else {
@@ -83,6 +83,10 @@ buttons.forEach((button) => {
     }
     else if (button.id == "equal") {
         let fullEquation = display.textContent.split(" ");
+        if (fullEquation.length < 3) {
+            display.textContent = parseFloat(operate(fullEquation[0], "add", 0).toFixed(6));
+        }
+        else if (fullEquation.length == 3) {
         let num1 = parseFloat(fullEquation[0]);
         let num2 = parseFloat(fullEquation[2]);
         let op = "";
@@ -98,16 +102,22 @@ buttons.forEach((button) => {
         else if (fullEquation[1] == "-") {
             op = "subtract";
         }
-        display.textContent = operate(num1, op, num2).toFixed(2);
+        display.textContent = parseFloat(operate(num1, op, num2).toFixed(6));
+    }
     }
     else if (button.id == "allClear") {
         display.textContent = "0";
     }
     else if (button.id == "clear") {
+        if (display.textContent == "NaN") {
+            display.textContent = "0";
+        }
+        else {
         let fullEquation = display.textContent.split("");
         fullEquation.pop();
         let clearFunction = fullEquation.join("");
         display.textContent = clearFunction;
+        }
     }
     else if (button.id == "decimal") {
         let fullEquation = display.textContent.split(" ");

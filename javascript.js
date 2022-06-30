@@ -19,7 +19,7 @@ function divide(a, b) {
     }
 }
 
-function operate(a, operator, b) {
+function operate(a, operator="add", b=0) {
     if (operator == "add") {
         return add(a, b);
     }
@@ -74,8 +74,13 @@ buttons.forEach((button) => {
             else if (fullEquation[1] == "-") {
                 op = "subtract";
             }
+            if (num2 != "") {
             display.textContent = parseFloat(operate(num1, op, num2).toFixed(6));
             display.textContent += ` ${button.textContent} `;
+            }
+            else {
+                display.textContent = num1;
+            }
         }
         else {
             display.textContent += ` ${button.textContent} `;
@@ -83,10 +88,6 @@ buttons.forEach((button) => {
     }
     else if (button.id == "equal") {
         let fullEquation = display.textContent.split(" ");
-        if (fullEquation.length < 3) {
-            display.textContent = parseFloat(operate(fullEquation[0], "add", 0).toFixed(6));
-        }
-        else if (fullEquation.length == 3) {
         let num1 = parseFloat(fullEquation[0]);
         let num2 = parseFloat(fullEquation[2]);
         let op = "";
@@ -102,8 +103,12 @@ buttons.forEach((button) => {
         else if (fullEquation[1] == "-") {
             op = "subtract";
         }
-        display.textContent = parseFloat(operate(num1, op, num2).toFixed(6));
-    }
+        if (num2 == "") {
+            display.textContent = num1;
+        }
+        else {
+            display.textContent = parseFloat(operate(num1, op, num2).toFixed(6));
+        }
     }
     else if (button.id == "allClear") {
         display.textContent = "0";

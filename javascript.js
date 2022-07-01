@@ -19,7 +19,7 @@ function divide(a, b) {
     }
 }
 
-function operate(a, operator="add", b=0) {
+function operate(a, operator, b) {
     if (operator == "add") {
         return add(a, b);
     }
@@ -46,8 +46,8 @@ buttons.forEach((button) => {
             display.textContent = `${button.value}`;
         }
         else {
-            if (display.textContent.includes("×") || display.textContent.includes("+") ||
-            display.textContent.includes("÷") || display.textContent.includes("-")) {
+            if (display.textContent.includes(" × ") || display.textContent.includes(" + ") ||
+            display.textContent.includes(" ÷ ") || display.textContent.includes(" - ")) {
                 display.textContent += `${button.value}`;
             }
             else {
@@ -56,8 +56,8 @@ buttons.forEach((button) => {
         }
     }
     else if (button.className == "functionButton") {
-        if (display.textContent.includes("×") || display.textContent.includes("+") ||
-        display.textContent.includes("÷") || display.textContent.includes("-")) {
+        if (display.textContent.includes(" × ") || display.textContent.includes(" + ") ||
+        display.textContent.includes(" ÷ ") || display.textContent.includes(" - ")) {
             let fullEquation = display.textContent.split(" ");
             let num1 = parseFloat(fullEquation[0]);
             let num2 = parseFloat(fullEquation[2]);

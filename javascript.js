@@ -74,13 +74,8 @@ buttons.forEach((button) => {
             else if (fullEquation[1] == "-") {
                 op = "subtract";
             }
-            if (num2 != "") {
             display.textContent = parseFloat(operate(num1, op, num2).toFixed(6));
             display.textContent += ` ${button.textContent} `;
-            }
-            else {
-                display.textContent = num1;
-            }
         }
         else {
             display.textContent += ` ${button.textContent} `;
